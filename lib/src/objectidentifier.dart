@@ -149,6 +149,13 @@ class ObjectIdentifier {
         },
         840: {
           null: 'us',
+          10040: {
+            null: 'x9-57',
+            4: {
+              null: 'x9cm',
+              3: 'id-dsa-with-sha1',
+            },
+          },
           10045: {
             null: 'ansi-X9-62',
             2: {
@@ -166,6 +173,17 @@ class ObjectIdentifier {
                 6: 'prime239v3',
                 7: 'prime256v1',
               }
+            },
+            4: {
+              null: 'id-ecSigType',
+              1: 'ecdsa-with-SHA1',
+              3: {
+                null: 'ecdsa-with-SHA2',
+                1: 'ecdsa-with-SHA224',
+                2: 'ecdsa-with-SHA256',
+                3: 'ecdsa-with-SHA384',
+                4: 'ecdsa-with-SHA512',
+              },
             }
           },
           113549: {
@@ -516,6 +534,20 @@ class ObjectIdentifier {
       16: {
         840: {
           1: {
+            101: {
+              null: 'gov',
+              3: {
+                null: 'csor',
+                4: {
+                  null: 'algorithms',
+                  3: {
+                    null: 'id-dsa-with-sha2',
+                    1: 'id-dsa-with-sha224',
+                    2: 'id-dsa-with-sha256',
+                  }
+                }
+              }
+            },
             113730: {
               null: 'netscape',
               1: {

@@ -171,6 +171,13 @@ String keyToString(Key key, [String prefix = '']) {
     buffer.writeln('${prefix}Exponent: ${key.exponent}');
     return buffer.toString();
   }
+  if (key is EcPublicKey) {
+    var buffer = StringBuffer();
+    buffer.write('X: ${key.xCoordinate.toRadixString(16)}\n');
+    buffer.write('Y: ${key.yCoordinate.toRadixString(16)}\n');
+    buffer.write('NIST CURVE: ${key.curve.name}');
+    return buffer.toString();
+  }
   return '$prefix$key';
 }
 

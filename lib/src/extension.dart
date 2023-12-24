@@ -177,6 +177,11 @@ class SubjectKeyIdentifier extends ExtensionValue {
   factory SubjectKeyIdentifier.fromAsn1(ASN1Object obj) {
     return SubjectKeyIdentifier(obj.contentBytes());
   }
+
+  @override
+  String toString() =>
+      keyIdentifier?.map((e) => e.toRadixString(16)).join(':').toUpperCase() ??
+      '';
 }
 
 /// The key usage extension defines the purpose (e.g., encipherment, signature,
