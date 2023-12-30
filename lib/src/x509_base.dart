@@ -113,7 +113,6 @@ class SubjectPublicKeyInfo {
     buffer.writeln('${prefix}Public Key Algorithm: $algorithm');
     buffer.writeln('${prefix}RSA Public Key:');
     buffer.writeln(keyToString(subjectPublicKey, '$prefix\t'));
-    buffer.writeln(subjectPublicKey);
     return buffer.toString();
   }
 

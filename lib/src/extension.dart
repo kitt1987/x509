@@ -57,7 +57,7 @@ class Extension {
   String toString([String prefix = '']) {
     var buffer = StringBuffer();
     buffer.writeln("$prefix$extnId: ${isCritical ? "critical" : ""}");
-    buffer.writeln('$prefix\t$extnValue');
+    buffer.writeln('$prefix${prefix.isEmpty ? '' : '\t'}$extnValue');
     return buffer.toString();
   }
 }
@@ -294,8 +294,15 @@ class KeyUsage extends ExtensionValue {
 
   @override
   String toString() => [
-        digitalSignature ? 'Digital Signature' : null
-        // TODO others
+        digitalSignature ? 'Digital Signature' : null,
+        nonRepudiation ? 'nonRepudiation' : null,
+        keyEncipherment ? 'keyEncipherment' : null,
+        dataEncipherment ? 'dataEncipherment' : null,
+        keyAgreement ? 'keyAgreement' : null,
+        keyCertSign ? 'keyCertSign' : null,
+        cRLSign ? 'cRLSign' : null,
+        encipherOnly ? 'encipherOnly' : null,
+        decipherOnly ? 'decipherOnly' : null,
       ].where((v) => v != null).join(',');
 }
 

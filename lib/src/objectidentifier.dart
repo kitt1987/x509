@@ -92,7 +92,7 @@ class ObjectIdentifier {
               null: 'pilot',
               1: {
                 null: 'pilotAttributeType',
-                25: {null: 'domainComponent'}
+                25: {null: 'DC'}
               }
             }
           }
@@ -479,12 +479,12 @@ class ObjectIdentifier {
         null: 'ds',
         4: {
           null: 'at',
-          3: 'commonName',
+          3: 'CN',
           4: 'surname',
-          6: 'countryName',
+          6: 'C',
           7: 'localityName',
           8: 'stateOrProvinceName',
-          10: 'organizationName',
+          10: 'O',
           11: 'organizationUnitName',
           12: 'title',
           35: 'userPassword',
@@ -509,12 +509,23 @@ class ObjectIdentifier {
         29: {
           null: 'ce',
           9: 'subjectDirectoryAttributes',
-          14: 'subjectKeyIdentifier',
-          15: 'keyUsage',
+          14: 'X509v3 Subject Key Identifier',
+          15: {
+            null: 'X509v3 Key Usage',
+            '0': 'digitalSignature',
+            '1': 'nonRepudiation',
+            '2': 'keyEncipherment',
+            '3': 'dataEncipherment',
+            '4': 'keyAgreement',
+            '5': 'keyCertSign',
+            '6': 'cRLSign',
+            '7': 'encipherOnly',
+            '8': 'decipherOnly',
+          },
           16: 'privateKeyUsagePeriod',
           17: 'subjectAltName',
           18: 'issuerAltName',
-          19: 'basicConstraints',
+          19: 'X509v3 Basic Constraints',
           20: 'cRLNumber',
           21: 'reasonCode',
           23: 'instructionCode',
